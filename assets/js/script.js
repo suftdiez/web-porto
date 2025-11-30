@@ -114,7 +114,7 @@ function updateActiveNavLink() {
 // ============================================
 const typewriterElement = document.getElementById('typewriter');
 const texts = [
-    'Selamat Datang Di Website Pengenalan Diri Tim Swallow!',
+    'Selamat Datang Di Website Pengenalan Diri Dari Tim findteamY!',
     'Membuat Website Sederhana Tapi Sedikit Keren😎',
     'Dengan HTML, CSS, Dan JavaScript.'
 ];
