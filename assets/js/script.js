@@ -1,6 +1,4 @@
-// ============================================
 // Preloader
-// ============================================
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     setTimeout(() => {
@@ -8,9 +6,7 @@ window.addEventListener('load', () => {
     }, 500);
 });
 
-// ============================================
 // Dark Mode Toggle with localStorage
-// ============================================
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 const html = document.documentElement;
@@ -34,9 +30,7 @@ function updateThemeIcon(theme) {
     themeIcon.textContent = theme === 'dark' ? '☀' : '☽';
 }
 
-// ============================================
 // Navigation - Sticky & Active Link
-// ============================================
 const navbar = document.getElementById('navbar');
 const navLinks = document.querySelectorAll('.nav-link');
 const navToggle = document.getElementById('nav-toggle');
@@ -109,9 +103,7 @@ function updateActiveNavLink() {
     });
 }
 
-// ============================================
 // Typewriter Effect
-// ============================================
 const typewriterElement = document.getElementById('typewriter');
 const texts = [
     'Selamat Datang Di Website Pengenalan Diri Dari Tim findteamY!',
@@ -151,9 +143,7 @@ function typeWriter() {
 // Start typewriter effect
 typeWriter();
 
-// ============================================
 // Particles Background
-// ============================================
 const canvas = document.getElementById('particles-canvas');
 if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -239,9 +229,7 @@ if (canvas) {
     });
 }
 
-// ============================================
 // IntersectionObserver for Scroll Animations
-// ============================================
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -267,9 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ============================================
 // Card Tilt Effect
-// ============================================
 const teamCards = document.querySelectorAll('[data-tilt]');
 
 teamCards.forEach(card => {
@@ -292,9 +278,7 @@ teamCards.forEach(card => {
     });
 });
 
-// ============================================
 // Form Validation
-// ============================================
 const contactForm = document.getElementById('contact-form');
 const formInputs = {
     name: document.getElementById('name'),
@@ -424,9 +408,7 @@ contactForm.addEventListener('submit', (e) => {
     }
 });
 
-// ============================================
 // Back to Top Button
-// ============================================
 const backToTopButton = document.getElementById('back-to-top');
 
 window.addEventListener('scroll', () => {
@@ -444,9 +426,7 @@ backToTopButton.addEventListener('click', () => {
     });
 });
 
-// ============================================
 // Keyboard Navigation Support
-// ============================================
 document.addEventListener('keydown', (e) => {
     // ESC key closes mobile menu
     if (e.key === 'Escape' && navMenu.classList.contains('active')) {
@@ -464,9 +444,7 @@ document.addEventListener('mousedown', () => {
     document.body.classList.remove('keyboard-navigation');
 });
 
-// ============================================
 // Image Placeholder Handler (for missing images)
-// ============================================
 const images = document.querySelectorAll('img');
 images.forEach(img => {
     img.addEventListener('error', function() {
@@ -486,9 +464,7 @@ images.forEach(img => {
     });
 });
 
-// ============================================
 // Performance Optimization - Lazy Loading
-// ============================================
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
