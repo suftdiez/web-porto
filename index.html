@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern developer portfolio website with dark mode, smooth animations, and interactive features built with pure HTML, CSS, and JavaScript">
+    <meta name="keywords" content="developer, portfolio, web development, coding, HTML, CSS, JavaScript, dark mode">
+    <meta name="author" content="Developer Team">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Developer Portfolio - Modern Web Experience">
+    <meta property="og:description" content="A fully responsive, modern website with dark mode and smooth animations">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/img/og-image.jpg">
+    
+    <title>Developer Portfolio | Modern Web Experience</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home" aria-label="Home">Swal<span>Low</span></a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link" aria-label="Home section">Home</a></li>
+                <li><a href="#about" class="nav-link" aria-label="About section">About</a></li>
+                <li><a href="#team" class="nav-link" aria-label="Team section">Team</a></li>
+                <li><a href="#contact" class="nav-link" aria-label="Contact section">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon" id="theme-icon">☽</span>
+            </button>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="typewriter-text" id="typewriter"></span>
+                <span class="cursor">|</span>
+            </h1>
+            <p class="hero-subtitle">Ini adalah web sederhana yang kami buat sebagai tugas kelompok, sekalian latihan bikin tampilan yang rapi, enak dilihat, dan pastinya responsif. Di sini kamu bisa lihat info tentang tim kami, siapa aja anggotanya, sampai penjelasan singkat cara kerja websitenya.</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary ripple">Jelajahi</a>
+                <a href="#contact" class="btn btn-secondary ripple">Hubungi Kami</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Website Ini</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Website ini dibuat sebagai tugas kelompok untuk mengenalkan tim kami sekaligus latihan bikin web pakai HTML, CSS, dan JavaScript tanpa framework apa pun.
+                        Karena nggak boleh pakai library, jadi semua animasi, dark mode, dan transisi kami bikin manual dari nol.
+                    </p>
+                    <p>
+                        Tujuan utama web ini sederhana ::
+                        1. Biar paham struktur dasar HTML
+                        2. Bisa styling pakai CSS yang rapi & modern
+                        3. Belajar bikin interaksi kecil pakai JavaScript
+                        4. Dan pastinya… biar tampilannya nggak ngebosenin 😁
+                    </p>
+                    <p>
+                        Kami juga berusaha bikin websitenya responsif, jadi entah dibuka di HP, laptop, atau layar gede, tampilannya tetap enak di mata.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title">Anggota Tim</h2>
+            <div class="team-grid">
+                <div class="team-card" data-tilt>
+                    <div class="team-card-inner">
+                        <div class="team-image">
+                            <img src="assets/img/hero-1.jpg" alt="Fajri Maulana Yusuf" loading="lazy">
+                        </div>
+                        <div class="team-info">
+                            <h3>Fajri Maulana Yusuf</h3>
+                            <p class="team-role">CSS Styling</p>
+                            <p class="team-description">Sedikit malas tapi ya sudahlah😁.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card" data-tilt>
+                    <div class="team-card-inner">
+                        <div class="team-image">
+                            <img src="assets/img/team2.jpg" alt="Sarah Chen - Backend Developer" loading="lazy">
+                        </div>
+                        <div class="team-info">
+                            <h3>Sarah Chen</h3>
+                            <p class="team-role">Backend Developer</p>
+                            <p class="team-description">Expert in building scalable server-side applications and robust APIs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card" data-tilt>
+                    <div class="team-card-inner">
+                        <div class="team-image">
+                            <img src="assets/img/team3.jpg" alt="Mike Rodriguez - Full Stack Developer" loading="lazy">
+                        </div>
+                        <div class="team-info">
+                            <h3>Mike Rodriguez</h3>
+                            <p class="team-role">Full Stack Developer</p>
+                            <p class="team-description">Bridging the gap between frontend and backend with comprehensive solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card" data-tilt>
+                    <div class="team-card-inner">
+                        <div class="team-image">
+                            <img src="assets/img/team4.jpg" alt="Emma Wilson - UI/UX Designer" loading="lazy">
+                        </div>
+                        <div class="team-info">
+                            <h3>Emma Wilson</h3>
+                            <p class="team-role">UI/UX Designer</p>
+                            <p class="team-description">Creating delightful user experiences through thoughtful design and research.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card" data-tilt>
+                    <div class="team-card-inner">
+                        <div class="team-image">
+                            <img src="assets/img/team5.jpg" alt="David Kim - DevOps Engineer" loading="lazy">
+                        </div>
+                        <div class="team-info">
+                            <h3>David Kim</h3>
+                            <p class="team-role">DevOps Engineer</p>
+                            <p class="team-description">Ensuring smooth deployments and optimal performance across all platforms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Nama <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-error">
+                    <span class="error-message" id="name-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-error">
+                    <span class="error-message" id="email-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject <span class="required">*</span></label>
+                    <input type="text" id="subject" name="subject" required aria-required="true" aria-describedby="subject-error">
+                    <span class="error-message" id="subject-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="5" required aria-required="true" aria-describedby="message-error"></textarea>
+                    <span class="error-message" id="message-error" role="alert"></span>
+                </div>
+                <button type="submit" class="btn btn-primary ripple">Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SwalLow</h3>
+                    <p>Membangun pengalaman web sederhana.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Fast Link</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Media Sosial</h4>
+                    <ul>
+                        <li><a href="#" aria-label="GitHub">GitHub</a></li>
+                        <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                        <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SwalLow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <span>↑</span>
+    </button>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+
