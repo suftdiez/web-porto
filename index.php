@@ -35,6 +35,7 @@
                 <li><a href="#about" class="nav-link" aria-label="About section">About</a></li>
                 <li><a href="#team" class="nav-link" aria-label="Team section">Team</a></li>
                 <li><a href="#contact" class="nav-link" aria-label="Contact section">Contact</a></li>
+                <li><a href="#isi-data" class="nav-link" aria-label="Input Data section">Isi Data</a></li>
             </ul>
             <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
                 <span class="theme-icon" id="theme-icon">☽</span>
@@ -197,6 +198,75 @@
                 </div>
                 <button type="submit" class="btn btn-primary ripple">Kirim Pesan</button>
             </form>
+        </div>
+    </section>
+    
+    <!-- Isi Data Section -->
+     </section>
+
+    <section id="isi-data" class="isi-data">
+        <div class="container">
+            <h2 class="section-title">Isi Data Mahasiswa</h2>
+            
+            <div class="contact-form"> <?php 
+                // Sertakan koneksi database
+                include "koneksi.php"; 
+
+                // Logika Simpan Data
+                if (isset($_POST['simpan_data'])) {
+                    $nama = htmlspecialchars($_POST['nama_mhs']); // Pakai htmlspecialchars biar aman
+                    $npm  = htmlspecialchars($_POST['npm_mhs']);
+
+                    $query = "INSERT INTO mahasiswa (nama, npm) VALUES ('$nama', '$npm')";
+                    
+                    if(mysqli_query($koneksi, $query)) {
+                        echo "<div style='background: #d1fae5; color: #065f46; padding: 10px; border-radius: 8px; margin-bottom: 20px; text-align: center;'>Data Berhasil Disimpan!</div>";
+                    } else {
+                        echo "<div style='background: #fee2e2; color: #991b1b; padding: 10px; border-radius: 8px; margin-bottom: 20px; text-align: center;'>Gagal: " . mysqli_error($koneksi) . "</div>";
+                    }
+                }
+                ?>
+
+                <form action="#isi-data" method="post">
+                    <div class="form-group">
+                        <label for="nama_mhs">Nama Mahasiswa <span class="required">*</span></label>
+                        <input type="text" id="nama_mhs" name="nama_mhs" required placeholder="Masukkan Nama Lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="npm_mhs">NPM <span class="required">*</span></label>
+                        <input type="number" id="npm_mhs" name="npm_mhs" required placeholder="Masukkan NPM">
+                    </div>
+                    <button type="submit" name="simpan_data" class="btn btn-primary ripple" style="width:100%">Simpan Data</button>
+                </form>
+            </div>
+
+            <div style="margin-top: 50px; overflow-x: auto;">
+                <h3 style="text-align: center; margin-bottom: 20px; color: var(--text-primary);">Daftar Data Tersimpan</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>NPM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $sql = "SELECT * FROM mahasiswa ORDER BY id DESC"; // Urutkan dari yang terbaru
+                        $result = mysqli_query($koneksi, $sql);
+                        $no = 1;
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr>";
+                            echo "<td>" . $no++ . "</td>";
+                            echo "<td>" . $row['nama'] . "</td>";
+                            echo "<td>" . $row['npm'] . "</td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </section>
 
